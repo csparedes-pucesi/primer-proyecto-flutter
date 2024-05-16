@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:primer_proyecto_flutter/pages/navbar_page.dart';
+import 'package:primer_proyecto_flutter/routes/route.dart';
 
 void main() => runApp(const MyApp());
 
@@ -8,13 +8,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'Material App',
-      home: Scaffold(
-          appBar: AppBar(
-            title: const Text('Material App Bar'),
-          ),
-          body: const NavBarPage()),
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(
@@ -22,6 +17,7 @@ class MyApp extends StatelessWidget {
           brightness: Brightness.dark,
         ),
       ),
+      routerConfig: routesConfig,
     );
   }
 }

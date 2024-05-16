@@ -1,32 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:primer_proyecto_flutter/widgets/nav_bar_widget.dart';
 
 class InitPage extends StatelessWidget {
   const InitPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final greetings = "Saludos a tod@s...";
-    return Center(
-          child: SingleChildScrollView(
-            // scrollDirection: Axis.horizontal,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(greetings),
-                const Text("Bienvenid@s a la clase"),
-                const Text("Estamos desarrollando...."),
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Icon(Icons.email_outlined),
-                    Icon(Icons.wallet),
-                    Icon(Icons.add),
-                  ],
-                )
-              ],
-            ),
+    return const Scaffold(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text("Saludos a tod@s..."),
+          Column(
+            children: [
+              Text("Bienvenid@s a la clase"),
+              Text("Estamos desarrollando...."),
+              Text("Esta es la página de inicio....")
+            ],
           ),
-        );
+          NavBarWidget()
+        ],
+      ),
+    );
   }
 }
